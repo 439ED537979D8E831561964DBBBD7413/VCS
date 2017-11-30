@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Annyang Coin Flip</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/coinflip.css">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/annyang.min.js"></script>
+
+	<script>
+		var coinFlip = function(){ 
+			    	$("h1").show();
+					$("img.coin").attr("src", "media/flipping.gif");
+					setTimeout(function(){
+						$("h1").hide();
+						$("img.coin").attr("src", coins[coinRandom()]);
+					},1000);
+			     }
+
+
+		if (annyang) {
+		  var commands = {
+		    'flip it': coinFlip,
+		    'flip the coin': coinFlip,
+		    'flip': coinFlip,
+		    'back': function() {window.open("index.html", "_self");}
+		  };
+
+		  annyang.addCommands(commands);
+
+		  annyang.start();
+		}
+	</script>
+
+<body>
+		<div align="center">
+		<img src="media/title2.png" class="title">
+		<img class="coin">
+		<br>
+		<strong>Click/Say</strong> <br>
+		<button>"Flip the Coin"</button><br>
+		<strong>or "Flip It" or just "Flip"</strong> <br>
+		<h1>FLIPPIN'</h1>
+		</div>
+
+	<script type="text/javascript">						
+		$("button").click(function(){
+			coinFlip();
+			});
+
+		$("h1").hide();
+			var coins = ["media/head.png", "media/tail.png"];
+		function coinRandom(){
+			var rand = parseInt((Math.random()*6) % 2);
+			return rand;
+		}
+
+		function coinFlip(){
+			$("h1").show();
+			$("img.coin").attr("src", "media/flipping.gif");
+			setTimeout(function(){
+				$("h1").hide();
+				$("img.coin").attr("src", coins[coinRandom()]);
+			},1000);
+		}
+	</script>
+
+	
+</body>
+</html>

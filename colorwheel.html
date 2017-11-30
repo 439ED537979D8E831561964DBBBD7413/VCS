@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Annyang Color Wheel</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/colorwheel.css">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/annyang.min.js"></script>
+
+<script>
+	var spinWheel = function(){ 
+		    	$("h1").show();
+				$(".color").attr("src", "media/color.gif");
+				setTimeout(function(){
+					$("h1").hide();
+					$(".color").attr("src", coins[wheelColorRandom()]);
+				},2000);
+		     }
+if (annyang) {
+  var commands = {
+    'spin the wheel': spinWheel,
+    'spin': spinWheel,
+    'spin it': spinWheel,
+    'back': function() {window.open("index.html", "_self");}
+  };
+
+  annyang.addCommands(commands);
+
+  annyang.start();
+}
+</script>
+
+<body>
+		<div align="center">
+		<img src="media/wheel.png" class="title">
+		<img class="color">
+		<br>
+		<strong>Click/Say</strong> <br>
+		<button>"Spin the Wheel"</button><br>
+		<strong>or "Spin it" or just "Spin"</strong> <br>
+		<h1>SPINNING'</h1>
+		</div>
+
+	<script type="text/javascript">						
+		$("button").click(function(){
+			spinTheWheel();
+		});
+
+		$("h1").hide();
+		var coins = ["media/green.png", "media/yellow.png", "media/violet.png", "media/blue.png", "media/red.png"];
+		function wheelColorRandom(){
+			var rand = parseInt((Math.random()*10) % 5);
+			return rand;
+		}
+
+		function spinTheWheel(){
+			$("h1").show();
+			$(".color").attr("src", "media/color.gif");
+			setTimeout(function(){
+				$("h1").hide();
+				$(".color").attr("src", coins[wheelColorRandom()]);
+			},2000);
+		}
+	</script>
+
+	
+</body>
+</html>

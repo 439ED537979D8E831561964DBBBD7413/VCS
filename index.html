@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Annyang Simulations By BSCS3A</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style type="text/css">
+		body 
+		{
+			background-image: url(media/boardgame.jpg);
+			color: white; font-family: century Gothic; overflow: hidden;
+			background-size: 100%;
+		}
+		img.title 
+		{
+			width: 100%;
+		    margin-top: 15%;
+
+		}
+		button 
+		{
+			width: 15vw; height: 4vw; border-width: 0px;
+			background-color: green; color: white; text-align: center;
+			font-family: century Gothic; font-size: 1.8vw; cursor: pointer;
+		}
+		div
+		{
+			background-color: rgba(0,0,0,0.7); z-index: 1;
+			padding-top: 74.7; height: 700px;width: 70%;
+			margin: 0% 15%; 
+		}
+		label {
+			font-size: 2vw;
+		}
+	</style>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/annyang.min.js"></script>
+
+	<script type="text/javascript">
+		if (annyang) {
+		  var commands = {
+		    'roll the dice': function() {window.open("diceroll.html", "_self");},
+		    'coin flip': function() {window.open("coinflip.html", "_self");},
+		    'color wheel': function() {window.open("colorwheel.html", "_self");}
+		  };
+
+		  annyang.addCommands(commands);
+
+		  annyang.start();
+		}
+	</script>
+	</head>
+<body>
+		<div align="center">
+		<img src="media/titlehome.png" class="title">
+		<a href="diceroll.html"><button>"Roll the Dice"</button></a>
+		<a href="coinflip.html"><button>"Coin Flip"</button></a>
+		<a href="colorwheel.html"><button>"Color Wheel"</button></a><br>
+		<label>Click or Simply Read it</label>
+		</div>
+</body>
+</html>

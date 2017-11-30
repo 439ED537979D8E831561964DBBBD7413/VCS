@@ -1,0 +1,27 @@
+body 
+{
+	background-image: url(../media/boardgame.jpg);
+	color: white; font-family: century Gothic; overflow: hidden;
+	background-size: 100%; 
+}
+img.dice 
+{
+	width: 25%;
+	margin-top: 1%;
+}
+img.title 
+{
+	width: 100%;
+}
+button 
+{
+	width: 20vw; height: 4vw; border-width: 0px;
+	background-color: green; color: white; text-align: center;
+	font-family: century Gothic; font-size: 1.8vw; cursor: pointer;
+}
+div
+{
+	background-color: #000000bd; z-index: 1;
+	padding-top: 74.7; height: 700px;width: 70%;
+	margin: 0% 15%; 
+}

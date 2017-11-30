@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Annyang Dice Roll</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/diceroll.css">
+	<!-- <style type="text/css">
+		
+	</style> -->
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/annyang.min.js"></script>
+
+<script>
+	var diceRoll = function(){ 
+		    	$("h1").show();
+				$("img.dice").attr("src", "media/dice.gif");
+				setTimeout(function(){
+					$("h1").hide();
+					$("img.dice").attr("src", dices[diceRandom()]);
+				},1000);}
+		if (annyang) {
+		  var commands = {
+		    'dice roll': diceRoll,
+		    'roll the dice': diceRoll,
+		    'roll': diceRoll,
+		    'back': function() {window.open("index.html", "_self");}
+		  };
+
+		  annyang.addCommands(commands);
+
+		  annyang.start();
+		}
+</script>
+
+<body>
+		<div align="center">
+		<img src="media/title.png" class="title">
+		<img class="dice">
+		<br>
+		<strong>Click or just Say...</strong> <br>
+		<button>"Roll the Dice"</button><br>
+		<strong>or "Dice Roll" or just "Roll"</strong> <br>
+		<h1>ROLLING . . .</h1>
+		</div>
+
+	<script type="text/javascript">						
+		$("button").click(function(){
+			diceRoll();
+			});
+
+		$("h1").hide();
+			var dices = ["media/dice1.png", "media/dice2.png", "media/dice3.png", "media/dice4.png", "media/dice5.png", "media/dice6.png"];
+		function diceRandom(){
+			var rand = parseInt((Math.random()*10) % 6);
+			return rand;
+		}
+
+		function diceRoll(){
+			$("h1").show();
+			$("img.dice").attr("src", "media/dice.gif");
+			setTimeout(function(){
+				$("h1").hide();
+				$("img.dice").attr("src", dices[diceRandom()]);
+			},1000);
+		}
+	</script>
+
+	
+</body>
+</html>
